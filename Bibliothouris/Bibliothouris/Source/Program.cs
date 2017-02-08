@@ -17,7 +17,6 @@ namespace Bibliothouris
         static void Main()
         {
             UserController userController = new UserController(new UsersForm(), new UserAddForm(), new UserService());
-            userController.view.ShowDialog();
-        }
+            userController.view.ShowDialog();      }
     }
 }
