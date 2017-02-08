@@ -8,5 +8,6 @@ namespace Bibliothouris.Source.Books
 {
     class BookRepository
     {
+
     }
 }
