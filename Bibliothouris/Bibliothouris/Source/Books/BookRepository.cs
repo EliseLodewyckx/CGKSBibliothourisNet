@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bibliothouris.Source.Books
 {
-    class BookRepository
+   public class BookRepository
     { private List<Book> books = new List<Book>();
 
 
@@ -29,6 +29,10 @@ namespace Bibliothouris.Source.Books
         {
             return books.Where<Book>(item => Regex.Matches(item.getAuthorLastName(), name).Count > 0).ToList<Book>();
         }
+        public List<Book> GetBookByAuthor (string name)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + item.getAuthorLastName(), name).Count > 0).ToList<Book>();
+        }
 
 
         public List <Book> getAllBooks()
@@ -36,6 +40,10 @@ namespace Bibliothouris.Source.Books
             return this.books;
         }
 
+        public void AddBook(Book book)
+        {
+            books.Add(book);
+        }
 
 
 
