@@ -31,7 +31,7 @@ namespace Bibliothouris.Source.Books
         }
         public List<Book> GetBookByAuthor (string name)
         {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + item.getAuthorLastName(), name).Count > 0).ToList<Book>();
+            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + " " +item.getAuthorLastName(), name).Count > 0).ToList<Book>();
         }
 
 
@@ -43,6 +43,17 @@ namespace Bibliothouris.Source.Books
         public void AddBook(Book book)
         {
             books.Add(book);
+        }
+
+        public string ReturnDetailsOfAListOfBooks(List<Book> bookList)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Book b in bookList)
+            {
+                sb.Append(b.getDetails());
+                sb.Append("\r\n\r\n");
+            }
+            return sb.ToString();
         }
 
 
