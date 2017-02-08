@@ -8,12 +8,12 @@ namespace Bibliothouris.Source.Books
 {
     class BookService
     {
-        public interface IUBooksService
+        public interface IBookService
         {
             List<Book> getAllBooks();
             void AddBook(Book book);
         }
-        public class Bookservice : IUBooksService
+        public class Bookservice : IBookService
         {
             private BookRepository bookRepository;
 
@@ -35,7 +35,3 @@ namespace Bibliothouris.Source.Books
         }
     }
 }
-/*
-   
-     
- */

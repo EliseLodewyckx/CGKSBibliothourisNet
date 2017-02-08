@@ -1,6 +1,6 @@
 ﻿namespace Bibliothouris.Forms.BookForm
 {
-    partial class Form1
+    partial class BookList
     {
         /// <summary>
         /// Required designer variable.
