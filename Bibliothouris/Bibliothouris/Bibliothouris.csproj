@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BookForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookForm\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,13 +83,18 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Source\Books\Book.cs" />
+    <Compile Include="Source\Books\BookController.cs" />
     <Compile Include="Source\Books\BookRepository.cs" />
+    <Compile Include="Source\Books\BookService.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\User\User.cs" />
     <Compile Include="Source\User\UserController.cs" />
     <Compile Include="Source\User\UserRepository.cs" />
     <Compile Include="Source\User\UserService.cs" />
+    <EmbeddedResource Include="Forms\BookForm\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAddForm.resx">
       <DependentUpon>UserAddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +147,7 @@
     <Content Include="obj\Debug\Bibliothouris.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\MemberForm\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
