@@ -10,5 +10,10 @@ namespace Bibliothouris.Forms.Members {
         public virtual List<Member> GetAllMembers() {
             return members;
         }
+
+        public void AddMember(Member member)
+        {
+           members.Add(member); 
+        }
     }
 }

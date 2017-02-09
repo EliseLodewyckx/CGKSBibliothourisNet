@@ -1,4 +1,6 @@
-﻿namespace Bibliothouris.Forms.Members {
+﻿using Bibliothouris.Forms.MemberForms;
+
+namespace Bibliothouris.Forms.Members {
 
     public class MemberController {
 
