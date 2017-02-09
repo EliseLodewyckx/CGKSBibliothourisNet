@@ -79,11 +79,20 @@
     <Compile Include="Forms\BookForm\SearchBooks.Designer.cs">
       <DependentUpon>SearchBooks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Members\MemberController.cs" />
-    <Compile Include="Forms\Members\MembersForm.cs">
+    <Compile Include="Forms\MemberForms\MemberAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Members\MembersForm.Designer.cs">
+    <Compile Include="Forms\MemberForms\MemberAddForm.Designer.cs">
+      <DependentUpon>MemberAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Members\MemberRepository.cs" />
+    <Compile Include="Source\Members\MemberService.cs" />
+    <Compile Include="Source\Members\Member.cs" />
+    <Compile Include="Source\Members\MemberController.cs" />
+    <Compile Include="Forms\MemberForms\MembersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MemberForms\MembersForm.Designer.cs">
       <DependentUpon>MembersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserAddForm.cs">
@@ -117,10 +126,17 @@
     <EmbeddedResource Include="Forms\BookForm\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Forms\BookForm\SearchBooks.resx">
       <DependentUpon>SearchBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Members\MembersForm.resx">
+=======
+    <EmbeddedResource Include="Forms\MemberForms\MemberAddForm.resx">
+      <DependentUpon>MemberAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MemberForms\MembersForm.resx">
+>>>>>>> c4e7d366a776ff84174a4748acc2853a515fab49
       <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAddForm.resx">
@@ -175,7 +191,6 @@
     <Content Include="obj\Debug\Bibliothouris.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\MemberForm\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
