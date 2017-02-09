@@ -12,6 +12,8 @@ namespace Bibliothouris.Forms.Members {
 
     public interface IMemberView {
         void SetController(MemberController memberController);
+        void AddMember(Member member);
+        DialogResult ShowDialog();
     }
 
 
@@ -29,6 +31,12 @@ namespace Bibliothouris.Forms.Members {
         public void SetController (MemberController memberController) {
             this.memberController = memberController;
         }
+
+        public void AddMember(Member member)
+        {
+            memberListView.Items.Add(CreateMemberListViewItem(member));
+        }
+            
         private ListViewItem CreateMemberListViewItem(Member member) {
             ListViewItem memberItem = new ListViewItem(member.INSZ);
             memberItem.SubItems.Add(member.FirstName);
@@ -39,11 +47,17 @@ namespace Bibliothouris.Forms.Members {
         }
 
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
+        private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
 
-        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e) {
+        private void MemberListView_SelectedIndexChanged_1(object sender, EventArgs e) {
+
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            memberController.addMemberView();
 
         }
     }

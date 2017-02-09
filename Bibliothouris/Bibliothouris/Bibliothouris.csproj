@@ -67,6 +67,22 @@
     <Compile Include="Forms\BookForm\BookList.Designer.cs">
       <DependentUpon>BookList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MemberForms\MemberAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MemberForms\MemberAddForm.Designer.cs">
+      <DependentUpon>MemberAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Members\MemberRepository.cs" />
+    <Compile Include="Source\Members\MemberService.cs" />
+    <Compile Include="Source\Members\Member.cs" />
+    <Compile Include="Source\Members\MemberController.cs" />
+    <Compile Include="Forms\MemberForms\MembersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MemberForms\MembersForm.Designer.cs">
+      <DependentUpon>MembersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +108,12 @@
     <Compile Include="Source\User\UserService.cs" />
     <EmbeddedResource Include="Forms\BookForm\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MemberForms\MemberAddForm.resx">
+      <DependentUpon>MemberAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MemberForms\MembersForm.resx">
+      <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAddForm.resx">
       <DependentUpon>UserAddForm.cs</DependentUpon>
@@ -145,7 +167,6 @@
     <Content Include="obj\Debug\Bibliothouris.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\MemberForm\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
