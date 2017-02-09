@@ -38,6 +38,11 @@ using System.Threading.Tasks;
             return AuthorLastName;
         }
 
+        public string getAuthorFullName()
+        {
+            return AuthorFirstName +" "+ AuthorLastName;
+        }
+
         public string getDetails () {
             StringBuilder sb = new StringBuilder();
             sb.Append("Title: " + getTitle() + "\r\n");
