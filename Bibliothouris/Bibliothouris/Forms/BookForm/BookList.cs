@@ -9,85 +9,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibliothouris.Forms.BookForm
-{
-    public partial class BookList : Form
+{ public interface IBookView
     {
-        public interface IBookView {
-            void SetController(BookController bookcontroller);
-            void AddBook(Book book);
-            void ClearAllBooks();
-            DialogResult ShowDialog();
-
-        }
-        public partial class Booklist : Form,IBookView
-        {
-            private BookController bookcontroller;
-            public Booklist()
-            {
-                InitializeComponent();
-            }
-            public void SetController (BookController bookController)
-            {
-                this.bookcontroller = bookcontroller;
-            }
-            public void AddBooks (Book book)
-            {
-                bookListView.Items.Add(CreateBookListViewItem(book));
-            }
-        }
-
-        /*
-          
-            private ListViewItem CreateUserListViewItem(User user)
-            {
-                ListViewItem userItem = new ListViewItem(user.ID.ToString());
-                userItem.SubItems.Add(user.Name);
-                return userItem;
-
-            }
-
-            public void ClearAllUsers()
-            {
-                userListView.Items.Clear();
-            }
-
-            private void add_Click(object sender, EventArgs e)
-            {
-                userController.addUserView();
-            }
-
-        }*
-         */
+        void SetController(BookController bookcontroller);
+        void AddBook(Book book);
+        void ClearAllBooks();
+        DialogResult ShowDialog();
+    }
+    public partial class BookList : Form , IBookView
+    {
+        private BookController bookcontroller;
+        
         public BookList()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        public void SetController (BookController bookcontroller)
         {
-
+            this.bookcontroller = bookcontroller;
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public void Adduser (Book book)
         {
-            string author = txtSearchByAuthor.Text;
+            bookListView.Items.Add(CreateBookListViewItem(book));
         }
-
-        private void btSearch_Click(object sender, EventArgs e)
+        private BookviewItem CreateBookListViewItem(Book book)
         {
-
+            BookViewItem bookItem = new BookViewItem(book.ISBN);
+            bookItem.SubItems.Add(book.ISBN);
+            bookItem.SubItems.Add(book.Title);
+            bookItem.SubItems.Add(book.Author);
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void ClearAllUsers()
         {
-            string isbn = txtSearchByIsbn.Text;
-
-
+            userListView.Items.Clear();
         }
-
-        private void txtSearchByTitle_TextChanged(object sender, EventArgs e)
-        {
-            string title = txtSearchByTitle.Text;
-        }
+   
     }
 }

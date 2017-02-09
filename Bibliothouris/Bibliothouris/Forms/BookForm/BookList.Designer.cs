@@ -28,105 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SearchBookByISBN = new System.Windows.Forms.Label();
-            this.txtSearchByIsbn = new System.Windows.Forms.TextBox();
-            this.lblSearchByTitle = new System.Windows.Forms.Label();
-            this.lblSearchByAuthor = new System.Windows.Forms.Label();
-            this.txtSearchByAuthor = new System.Windows.Forms.TextBox();
-            this.txtSearchByTitle = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btAddBook = new System.Windows.Forms.Button();
             this.btSearch = new System.Windows.Forms.Button();
+            this.btClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // SearchBookByISBN
+            // listView1
             // 
-            this.SearchBookByISBN.AutoSize = true;
-            this.SearchBookByISBN.Location = new System.Drawing.Point(12, 9);
-            this.SearchBookByISBN.Name = "SearchBookByISBN";
-            this.SearchBookByISBN.Size = new System.Drawing.Size(77, 13);
-            this.SearchBookByISBN.TabIndex = 0;
-            this.SearchBookByISBN.Text = "Search by isbn";
-            this.SearchBookByISBN.Click += new System.EventHandler(this.label1_Click);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ISBN,
+            this.Title,
+            this.Author});
+            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1260, 455);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // txtSearchByIsbn
+            // ISBN
             // 
-            this.txtSearchByIsbn.Location = new System.Drawing.Point(15, 25);
-            this.txtSearchByIsbn.Name = "txtSearchByIsbn";
-            this.txtSearchByIsbn.Size = new System.Drawing.Size(251, 20);
-            this.txtSearchByIsbn.TabIndex = 1;
-            this.txtSearchByIsbn.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.ISBN.Text = "ISBN";
+            this.ISBN.Width = 154;
             // 
-            // lblSearchByTitle
+            // Title
             // 
-            this.lblSearchByTitle.AutoSize = true;
-            this.lblSearchByTitle.Location = new System.Drawing.Point(12, 58);
-            this.lblSearchByTitle.Name = "lblSearchByTitle";
-            this.lblSearchByTitle.Size = new System.Drawing.Size(74, 13);
-            this.lblSearchByTitle.TabIndex = 2;
-            this.lblSearchByTitle.Text = "Search by title";
+            this.Title.Text = "Title";
+            this.Title.Width = 252;
             // 
-            // lblSearchByAuthor
+            // Author
             // 
-            this.lblSearchByAuthor.AutoSize = true;
-            this.lblSearchByAuthor.Location = new System.Drawing.Point(12, 108);
-            this.lblSearchByAuthor.Name = "lblSearchByAuthor";
-            this.lblSearchByAuthor.Size = new System.Drawing.Size(88, 13);
-            this.lblSearchByAuthor.TabIndex = 3;
-            this.lblSearchByAuthor.Text = "Search by author";
+            this.Author.Text = "Author";
+            this.Author.Width = 356;
             // 
-            // txtSearchByAuthor
+            // btAddBook
             // 
-            this.txtSearchByAuthor.Location = new System.Drawing.Point(15, 133);
-            this.txtSearchByAuthor.Name = "txtSearchByAuthor";
-            this.txtSearchByAuthor.Size = new System.Drawing.Size(251, 20);
-            this.txtSearchByAuthor.TabIndex = 4;
-            this.txtSearchByAuthor.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // txtSearchByTitle
-            // 
-            this.txtSearchByTitle.Location = new System.Drawing.Point(15, 74);
-            this.txtSearchByTitle.Name = "txtSearchByTitle";
-            this.txtSearchByTitle.Size = new System.Drawing.Size(251, 20);
-            this.txtSearchByTitle.TabIndex = 5;
-            this.txtSearchByTitle.TextChanged += new System.EventHandler(this.txtSearchByTitle_TextChanged);
+            this.btAddBook.Location = new System.Drawing.Point(12, 473);
+            this.btAddBook.Name = "btAddBook";
+            this.btAddBook.Size = new System.Drawing.Size(97, 32);
+            this.btAddBook.TabIndex = 1;
+            this.btAddBook.Text = "Add books";
+            this.btAddBook.UseVisualStyleBackColor = true;
             // 
             // btSearch
             // 
-            this.btSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btSearch.Location = new System.Drawing.Point(15, 177);
+            this.btSearch.Location = new System.Drawing.Point(1175, 473);
             this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(122, 67);
-            this.btSearch.TabIndex = 6;
-            this.btSearch.Text = "Search>>";
+            this.btSearch.Size = new System.Drawing.Size(97, 32);
+            this.btSearch.TabIndex = 2;
+            this.btSearch.Text = "Search";
             this.btSearch.UseVisualStyleBackColor = true;
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // Form1
+            // btClear
+            // 
+            this.btClear.Location = new System.Drawing.Point(1072, 473);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(97, 32);
+            this.btClear.TabIndex = 3;
+            this.btClear.Text = "Clear";
+            this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Visible = false;
+            // 
+            // BookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 534);
-            this.Controls.Add(this.txtSearchByIsbn);
+            this.ClientSize = new System.Drawing.Size(1284, 561);
+            this.Controls.Add(this.btClear);
             this.Controls.Add(this.btSearch);
-            this.Controls.Add(this.txtSearchByTitle);
-            this.Controls.Add(this.txtSearchByAuthor);
-            this.Controls.Add(this.lblSearchByAuthor);
-            this.Controls.Add(this.lblSearchByTitle);
-            this.Controls.Add(this.SearchBookByISBN);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.btAddBook);
+            this.Controls.Add(this.listView1);
+            this.Name = "BookList";
+            this.Text = "BookList";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label SearchBookByISBN;
-        private System.Windows.Forms.TextBox txtSearchByIsbn;
-        private System.Windows.Forms.Label lblSearchByTitle;
-        private System.Windows.Forms.Label lblSearchByAuthor;
-        private System.Windows.Forms.TextBox txtSearchByAuthor;
-        private System.Windows.Forms.TextBox txtSearchByTitle;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader ISBN;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Author;
+        private System.Windows.Forms.Button btAddBook;
         private System.Windows.Forms.Button btSearch;
+        private System.Windows.Forms.Button btClear;
     }
 }
