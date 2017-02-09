@@ -28,7 +28,7 @@ namespace Bibliothouris.Forms.BookForm
         {
             this.bookcontroller = bookcontroller;
         }
-        public void Adduser (Book book)
+        public void AddBook (Book book)
         {
             bookListView.Items.Add(CreateBookListViewItem(book));
         }
@@ -39,10 +39,19 @@ namespace Bibliothouris.Forms.BookForm
             bookItem.SubItems.Add(book.Title);
             bookItem.SubItems.Add(book.Author);
         }
-        public void ClearAllUsers()
+        public void ClearAllBooks()
         {
-            userListView.Items.Clear();
+            bookListView.Items.Clear();
         }
-   
+
+        private void btAddBook_Click(object sender, EventArgs e)
+        {
+            bookcontroller.addBookView();
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            bookcontroller.SearchBookView();
+        }
     }
 }

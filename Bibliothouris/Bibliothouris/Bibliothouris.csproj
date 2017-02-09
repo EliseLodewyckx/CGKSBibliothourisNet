@@ -61,11 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BookForm\AddBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookForm\AddBooks.Designer.cs">
+      <DependentUpon>AddBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookForm\BookList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\BookForm\BookList.Designer.cs">
       <DependentUpon>BookList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookForm\SearchBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookForm\SearchBooks.Designer.cs">
+      <DependentUpon>SearchBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members\MemberController.cs" />
+    <Compile Include="Forms\Members\MembersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members\MembersForm.Designer.cs">
+      <DependentUpon>MembersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserAddForm.cs">
       <SubType>Form</SubType>
@@ -84,14 +103,24 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Source\Books\Book.cs" />
     <Compile Include="Source\Books\BookRepository.cs" />
+    <Compile Include="Source\Members\Member.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\User\User.cs" />
     <Compile Include="Source\User\UserController.cs" />
     <Compile Include="Source\User\UserRepository.cs" />
     <Compile Include="Source\User\UserService.cs" />
+    <EmbeddedResource Include="Forms\BookForm\AddBooks.resx">
+      <DependentUpon>AddBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookForm\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookForm\SearchBooks.resx">
+      <DependentUpon>SearchBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members\MembersForm.resx">
+      <DependentUpon>MembersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserAddForm.resx">
       <DependentUpon>UserAddForm.cs</DependentUpon>
