@@ -16,10 +16,6 @@ namespace Bibliothouris.Forms.Members {
         DialogResult ShowDialog();
     }
 
-
-
-
-
     public partial class MembersForm : Form, IMemberView {
 
         private MemberController memberController;
