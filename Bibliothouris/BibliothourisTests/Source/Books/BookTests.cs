@@ -10,7 +10,7 @@ namespace Bibliothouris.Source.Books.Tests {
     [TestClass()]
     public class BookTests {
         [TestMethod()]
-        public void getDetailsTest() {
+        public void GetDetailsTest() {
             Book book = new Book("This is a book", "1589874565897", "iemand", "anders");
             string result = book.getDetails();
             string expected = "Title: This is a book\r\nISBN: 1589874565897\r\nAuthor: iemand anders";
