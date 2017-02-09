@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.bookListView = new System.Windows.Forms.ListView();
             this.ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,18 +37,18 @@
             this.btClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // bookListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.bookListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ISBN,
             this.Title,
             this.Author});
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1260, 455);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.bookListView.Location = new System.Drawing.Point(12, 12);
+            this.bookListView.Name = "bookListView";
+            this.bookListView.Size = new System.Drawing.Size(1260, 455);
+            this.bookListView.TabIndex = 0;
+            this.bookListView.UseCompatibleStateImageBehavior = false;
+            this.bookListView.View = System.Windows.Forms.View.Details;
             // 
             // ISBN
             // 
@@ -73,6 +73,7 @@
             this.btAddBook.TabIndex = 1;
             this.btAddBook.Text = "Add books";
             this.btAddBook.UseVisualStyleBackColor = true;
+            this.btAddBook.Click += new System.EventHandler(this.btAddBook_Click);
             // 
             // btSearch
             // 
@@ -82,6 +83,7 @@
             this.btSearch.TabIndex = 2;
             this.btSearch.Text = "Search";
             this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // btClear
             // 
@@ -92,6 +94,7 @@
             this.btClear.Text = "Clear";
             this.btClear.UseVisualStyleBackColor = true;
             this.btClear.Visible = false;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // BookList
             // 
@@ -101,7 +104,7 @@
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.btAddBook);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.bookListView);
             this.Name = "BookList";
             this.Text = "BookList";
             this.ResumeLayout(false);
@@ -110,7 +113,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView bookListView;
         private System.Windows.Forms.ColumnHeader ISBN;
         private System.Windows.Forms.ColumnHeader Title;
         private System.Windows.Forms.ColumnHeader Author;

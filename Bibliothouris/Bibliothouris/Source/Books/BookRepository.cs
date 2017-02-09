@@ -11,16 +11,28 @@ namespace Bibliothouris.Source.Books
     { private List<Book> books = new List<Book>();
 
 
-        public List<Book> getBookByISBN (string number)
-        {    
-           return books.Where<Book>(item => Regex.Matches(item.getISBN(), number).Count > 0).ToList<Book>();
+        public List<Book> getBookByISBN(string number)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getISBN(), number).Count > 0).ToList<Book>();
+        }
+        public List<Book> getBookByISBN(string number, List<Book> books)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getISBN(), number).Count > 0).ToList<Book>();
         }
 
         public List<Book> getBookByTitle(string letters)
         {
             return books.Where<Book>(item => Regex.Matches(item.getTitle(), letters).Count > 0).ToList<Book>();
         }
+        public List<Book> getBookByTitle(string letters, List<Book>books)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getTitle(), letters).Count > 0).ToList<Book>();
+        }
         public List<Book> getBookByFirstNameAuthor(string name)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), name).Count > 0).ToList<Book>();
+        }
+        public List<Book> getBookByFirstNameAuthor(string name,List<Book>books)
         {
             return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), name).Count > 0).ToList<Book>();
         }
@@ -29,9 +41,18 @@ namespace Bibliothouris.Source.Books
         {
             return books.Where<Book>(item => Regex.Matches(item.getAuthorLastName(), name).Count > 0).ToList<Book>();
         }
+
+        public List<Book> getBookByLastNameAuthor(string name, List<Book>books)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getAuthorLastName(), name).Count > 0).ToList<Book>();
+        }
         public List<Book> GetBookByAuthor (string name)
         {
             return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + " " +item.getAuthorLastName(), name).Count > 0).ToList<Book>();
+        }
+        public List<Book> GetBookByAuthor(string name,List<Book>books)
+        {
+            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + " " + item.getAuthorLastName(), name).Count > 0).ToList<Book>();
         }
 
 
