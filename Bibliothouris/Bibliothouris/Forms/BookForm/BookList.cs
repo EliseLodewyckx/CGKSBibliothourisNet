@@ -77,5 +77,11 @@ namespace Bibliothouris.Forms.BookForm
         {
             btClear.Visible = false;
         }
+
+
+        private void bookListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var book = bookcontroller.GetBookByISBN(bookListView.GetItemAt(e.X, e.Y).Name);
+        }
     }
 }

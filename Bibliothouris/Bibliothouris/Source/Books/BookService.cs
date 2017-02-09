@@ -12,6 +12,7 @@ namespace Bibliothouris.Source.Books
         List<Book> GetAllBooks();
         void AddBook(string isbn, string title, string firstName, string lastName);
         List<Book> SearchBooks(string isbn, string title, string firstName, string lastName);
+        Book GetBookByISBN(string ISBN);
     }
 
     class BookService : IBookService
@@ -39,6 +40,11 @@ namespace Bibliothouris.Source.Books
                 bookRepository.getBookByTitle(title,
                     bookRepository.getBookByFirstNameAuthor(firstName,
                         bookRepository.getBookByLastNameAuthor(lastName))));
+        }
+
+        public Book GetBookByISBN(string ISBN)
+        {
+            return bookRepository.getBookByISBN(ISBN)[0];
         }
     }
 }

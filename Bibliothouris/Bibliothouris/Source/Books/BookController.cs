@@ -23,6 +23,7 @@ namespace Bibliothouris.Source.Books
             this.bookView = bookView;
             this.bookView.SetController(this);
             this.addBookView.SetController(this);
+            this.bookSearchView.SetController(this);
         }
 
         public void ShowAddBook()
@@ -81,6 +82,11 @@ namespace Bibliothouris.Source.Books
             ClearAllBooks();
             LoadAllBooks();
             bookView.DisableClear();
+        }
+
+        public Book GetBookByISBN(string name)
+        {
+          return  bookService.GetBookByISBN( name);
         }
     }
 }

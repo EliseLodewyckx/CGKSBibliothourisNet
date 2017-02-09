@@ -49,6 +49,7 @@
             this.bookListView.TabIndex = 0;
             this.bookListView.UseCompatibleStateImageBehavior = false;
             this.bookListView.View = System.Windows.Forms.View.Details;
+            this.bookListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.bookListView_MouseDoubleClick);
             // 
             // ISBN
             // 
