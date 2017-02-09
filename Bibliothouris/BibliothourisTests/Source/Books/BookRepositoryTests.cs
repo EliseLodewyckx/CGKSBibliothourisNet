@@ -29,7 +29,7 @@ namespace Bibliothouris.Source.Books.Tests
 
 
         [TestMethod()]
-        public void getBookByISBNTest()
+        public void GetBookByIsbnTest()
         {
             List<Book> result = bookrepos.getBookByISBN("123");
             List<Book> expected = new List<Book> { book1, book2 };
@@ -41,7 +41,7 @@ namespace Bibliothouris.Source.Books.Tests
         }
 
         [TestMethod()]
-        public void getBookByTitleTest()
+        public void GetBookByTitleTest()
         {
             List<Book> result = bookrepos.getBookByTitle("another book");
             List<Book> expected = new List<Book> { book2 };
@@ -54,7 +54,7 @@ namespace Bibliothouris.Source.Books.Tests
         }
 
         [TestMethod()]
-        public void getBookByFirstNameAuthorTest()
+        public void GetBookByFirstNameAuthorTest()
         {
             List<Book> result = bookrepos.getBookByFirstNameAuthor("iemand");
             List<Book> expected = new List<Book> { book1 };
@@ -66,7 +66,7 @@ namespace Bibliothouris.Source.Books.Tests
         }
 
         [TestMethod()]
-        public void getBookByLastNameAuthorTest()
+        public void GetBookByLastNameAuthorTest()
         {
             List<Book> result = bookrepos.getBookByLastNameAuthor("achternaam");
             List<Book> expected = new List<Book> { book1, book2 };
