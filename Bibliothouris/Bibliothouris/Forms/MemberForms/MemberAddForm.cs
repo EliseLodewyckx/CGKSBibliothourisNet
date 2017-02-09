@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Bibliothouris.Forms.Members;
 
 namespace Bibliothouris.Forms.MemberForms {
+    // Add textboxes for city, street, number & postal code. Store this in an address object
 
     public interface IMemberAddView
     {
@@ -46,6 +47,11 @@ namespace Bibliothouris.Forms.MemberForms {
             FirstNameMember.Text = "";
             LastNameMember.Text = "";
             CityMember.Text = "";
+        }
+
+        private void MemberAddForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

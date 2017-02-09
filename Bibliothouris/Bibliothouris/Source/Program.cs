@@ -18,10 +18,10 @@ namespace Bibliothouris
         [STAThread]
         static void Main()
         {
-            /* UserController userController = new UserController(new UsersForm(), new UserAddForm(), new UserService());
-             userController.view.ShowDialog();    */
+        /* UserController userController = new UserController(new UsersForm(), new UserAddForm(), new UserService());
+         userController.view.ShowDialog();    */
         MemberController memberController = new MemberController(new MembersForm(), new MemberAddForm(), new MemberService());
-            memberController.view.ShowDialog();
+        memberController.view.ShowDialog();
         }
     }
 }
