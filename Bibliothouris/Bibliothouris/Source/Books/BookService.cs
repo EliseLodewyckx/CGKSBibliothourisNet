@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,26 +10,35 @@ namespace Bibliothouris.Source.Books
     public interface IBookService
     {
         List<Book> GetAllBooks();
-
-        void AddBook(string txtIsbnText, string txtTitleText, string txtFirstNameText, string txtLastNameText);
+        void AddBook(string isbn, string title, string firstName, string lastName);
         List<Book> SearchBooks(string isbn, string title, string firstName, string lastName);
     }
 
-    class BookService: IBookService
+    class BookService : IBookService
     {
-        public List<Book> GetAllBooks()
+        private BookRepository bookRepository;
+
+        public BookService(BookRepository bookRepository)
         {
-            throw new NotImplementedException();
+            this.bookRepository = bookRepository;
         }
 
-        public void AddBook(string txtIsbnText, string txtTitleText, string txtFirstNameText, string txtLastNameText)
+        public List<Book> GetAllBooks()
         {
-            throw new NotImplementedException();
+            return bookRepository.getAllBooks();
+        }
+
+        public void AddBook(string isbn, string title, string firstName, string lastName)
+        {
+            bookRepository.AddBook(new Book(title, isbn, firstName, lastName));
         }
 
         public List<Book> SearchBooks(string isbn, string title, string firstName, string lastName)
         {
-            throw new NotImplementedException();
+            return bookRepository.getBookByISBN(isbn,
+                bookRepository.getBookByTitle(title,
+                    bookRepository.getBookByFirstNameAuthor(firstName,
+                        bookRepository.getBookByLastNameAuthor(lastName))));
         }
     }
 }

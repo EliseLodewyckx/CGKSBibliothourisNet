@@ -80,6 +80,7 @@ namespace Bibliothouris.Source.Books
         {
             ClearAllBooks();
             LoadAllBooks();
+            bookView.DisableClear();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Bibliothouris.Forms.BookForm
         void AddBook(Book book);
         void ClearAllBooks();
         void EnableClear();
+        void DisableClear();
         DialogResult ShowDialog();
     }
 
@@ -70,6 +71,11 @@ namespace Bibliothouris.Forms.BookForm
         public void EnableClear()
         {
             btClear.Visible = true;
+        }
+
+        public void DisableClear()
+        {
+            btClear.Visible = false;
         }
     }
 }
