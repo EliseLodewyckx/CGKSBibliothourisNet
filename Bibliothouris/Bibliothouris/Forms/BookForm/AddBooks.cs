@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bibliothouris.Source.Books;
 
 namespace Bibliothouris.Forms.BookForm
 {
-    public interface IBookAddVIew
+    public interface IBookAddView
     {
         void SetController(BookController bookController);
         void Close();
         void Clear();
         DialogResult ShowDialog();
     }
-    public partial class AddBooks : Form, IBookAddVIew
+    public partial class AddBooks : Form, IBookAddView
     {
-        private Bookcontroller bookController;
+        private BookController bookController;
         public AddBooks()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Bibliothouris.Forms.BookForm
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
-            bookController.AddBooks(txtISBN.Text, txtTitle.Text, txtFirstName.Text, txtLastName.Text);
+            bookController.AddBook(txtISBN.Text, txtTitle.Text, txtFirstName.Text, txtLastName.Text);
         }
 
         public void Clear()
