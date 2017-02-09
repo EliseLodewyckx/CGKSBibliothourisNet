@@ -107,6 +107,7 @@
             this.add.TabIndex = 8;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // MemberAddForm
             // 
