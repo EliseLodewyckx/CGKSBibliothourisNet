@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bibliothouris.Source.Books;
 
 namespace Bibliothouris.Forms.BookForm
 { public interface IBookSearchView
     {
         void SetController(BookController bookController);
         void Close();
-        void CLear();
+        void Clear();
         DialogResult ShowDialog();
     }
     public partial class SearchBooks : Form, IBookSearchView
@@ -30,10 +31,7 @@ namespace Bibliothouris.Forms.BookForm
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-            bookController.SearchBooks(txtSearchISBN.Text);
-            bookController.SearchBooks(txtSearchTitle.Text);
-            bookController.SearchBooks(txtSearchFirstName.Text);
-            bookController.SearchBooks(txtSearchLastName.Text);
+            bookController.SearchBooks(txtSearchISBN.Text, txtSearchTitle.Text,txtSearchFirstName.Text,txtSearchLastName.Text);
         }
         public void Clear()
         {
