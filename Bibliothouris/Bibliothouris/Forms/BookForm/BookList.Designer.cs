@@ -83,6 +83,7 @@
             this.btSearch.TabIndex = 2;
             this.btSearch.Text = "Search";
             this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // btClear
             // 

@@ -7,38 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bibliothouris.Source.Books;
 
 namespace Bibliothouris.Forms.BookForm
-{ public interface IBookView
+{
+    public interface IBookView
     {
         void SetController(BookController bookcontroller);
         void AddBook(Book book);
         void ClearAllBooks();
+        void EnableClear();
         DialogResult ShowDialog();
     }
-    public partial class BookList : Form , IBookView
+
+    public partial class BookList : Form, IBookView
     {
         private BookController bookcontroller;
-        
+
         public BookList()
         {
             InitializeComponent();
         }
-        public void SetController (BookController bookcontroller)
+
+        public void SetController(BookController bookcontroller)
         {
             this.bookcontroller = bookcontroller;
         }
-        public void AddBook (Book book)
+
+        public void AddBook(Book book)
         {
             bookListView.Items.Add(CreateBookListViewItem(book));
         }
-        private BookviewItem CreateBookListViewItem(Book book)
+
+        private ListViewItem CreateBookListViewItem(Book book)
         {
-            BookViewItem bookItem = new BookViewItem(book.ISBN);
-            bookItem.SubItems.Add(book.ISBN);
-            bookItem.SubItems.Add(book.Title);
-            bookItem.SubItems.Add(book.Author);
+            ListViewItem bookItem = new ListViewItem(book.getISBN());
+            bookItem.SubItems.Add(book.getTitle());
+            bookItem.SubItems.Add(book.getAuthorFullName());
+            return bookItem;
         }
+
         public void ClearAllBooks()
         {
             bookListView.Items.Clear();
@@ -46,12 +54,22 @@ namespace Bibliothouris.Forms.BookForm
 
         private void btAddBook_Click(object sender, EventArgs e)
         {
-            bookcontroller.addBookView();
+            bookcontroller.ShowAddBook();
         }
 
         private void btClear_Click(object sender, EventArgs e)
         {
+            bookcontroller.ClearView();
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
             bookcontroller.SearchBookView();
+        }
+
+        public void EnableClear()
+        {
+            btClear.Visible = true;
         }
     }
 }
