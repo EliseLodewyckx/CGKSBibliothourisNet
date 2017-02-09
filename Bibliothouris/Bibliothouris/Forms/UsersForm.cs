@@ -57,5 +57,8 @@ namespace Bibliothouris.Forms
             userController.addUserView();
         }
 
+        private void userListView_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }
