@@ -21,7 +21,7 @@ namespace Bibliothouris
         [STAThread]
         static void Main()
         {
-<<<<<<< HEAD
+
             /* UserController userController = new UserController(new UsersForm(), new UserAddForm(), new UserService());
              userController.view.ShowDialog();    */
             //        MemberController memberController = new MemberController(new MembersForm(), new MemberAddForm(), new MemberService());
@@ -31,12 +31,6 @@ namespace Bibliothouris
                 new BookController(new AddBooks(), new SearchBooks(), new BookService(new BookRepository()), new BookList()),
                 new MemberController(new MembersForm(), new MemberAddForm(), new MemberService()));
             rentalController.rentalView.ShowDialog();
-=======
-        /* UserController userController = new UserController(new UsersForm(), new UserAddForm(), new UserService());
-         userController.view.ShowDialog();    */
-        MemberController memberController = new MemberController(new MembersForm(), new MemberAddForm(), new MemberService());
-        memberController.view.ShowDialog();
->>>>>>> dda79340f598a61f9758f765bb16ed1dc1aa8df5
         }
     }
 }
