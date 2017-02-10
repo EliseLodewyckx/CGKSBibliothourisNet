@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -36,15 +37,14 @@ namespace Bibliothouris.Source.Books
 
         public List<Book> SearchBooks(string isbn, string title, string firstName, string lastName)
         {
-            return bookRepository.getBookByISBN(isbn,
-                bookRepository.getBookByTitle(title,
-                    bookRepository.getBookByFirstNameAuthor(firstName,
-                        bookRepository.getBookByLastNameAuthor(lastName))));
+            
+            return bookRepository.getBooksByDetails(isbn, title, firstName, lastName);
         }
 
         public Book GetBookByISBN(string ISBN)
         {
-            return bookRepository.getBookByISBN(ISBN)[0];
+            return bookRepository.getBooksByDetails(ISBN,"","","")[0];
+        }
+       
         }
     }
-}

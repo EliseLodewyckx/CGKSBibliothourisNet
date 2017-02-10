@@ -11,50 +11,26 @@ namespace Bibliothouris.Source.Books
     { private List<Book> books = new List<Book>();
 
 
-        public List<Book> getBookByISBN(string number)
+        public List<Book> getBooksByDetails(string number, string title, string firstName, string lastName)
         {
-            return books.Where<Book>(item => Regex.Matches(item.getISBN(), number).Count > 0).ToList<Book>();
-        }
-        public List<Book> getBookByISBN(string number, List<Book> books)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getISBN(), number).Count > 0).ToList<Book>();
+            
+
+            number =  number.Replace("*", ".*");
+            title = title.Replace("*", ".*");
+            firstName =  firstName.Replace("*", ".*");
+            lastName = lastName.Replace("*", ".*");
+            return books.Where<Book>(item => Regex.Matches(item.getISBN(),number).Count > 0)
+                .Where<Book>(item => Regex.Matches(item.getTitle(), title).Count > 0)
+                .Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), firstName).Count > 0)
+                .Where<Book>(item => Regex.Matches(item.getAuthorLastName(), lastName).Count > 0).ToList<Book>();
         }
 
-        public List<Book> getBookByTitle(string letters)
+      /*  public Regex RegexWithWildcard(string input)
         {
-            return books.Where<Book>(item => Regex.Matches(item.getTitle(), letters).Count > 0).ToList<Book>();
-        }
-        public List<Book> getBookByTitle(string letters, List<Book>books)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getTitle(), letters).Count > 0).ToList<Book>();
-        }
-        public List<Book> getBookByFirstNameAuthor(string name)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), name).Count > 0).ToList<Book>();
-        }
-        public List<Book> getBookByFirstNameAuthor(string name,List<Book>books)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), name).Count > 0).ToList<Book>();
-        }
+            string pattern = input.Replace("*", ".*");
+            return new Regex(pattern);
 
-        public List<Book> getBookByLastNameAuthor (string name)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorLastName(), name).Count > 0).ToList<Book>();
-        }
-
-        public List<Book> getBookByLastNameAuthor(string name, List<Book>books)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorLastName(), name).Count > 0).ToList<Book>();
-        }
-        public List<Book> GetBookByAuthor (string name)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + " " +item.getAuthorLastName(), name).Count > 0).ToList<Book>();
-        }
-        public List<Book> GetBookByAuthor(string name,List<Book>books)
-        {
-            return books.Where<Book>(item => Regex.Matches(item.getAuthorFirstName() + " " + item.getAuthorLastName(), name).Count > 0).ToList<Book>();
-        }
-
+        }*/
 
         public List <Book> getAllBooks()
         {
@@ -82,8 +58,4 @@ namespace Bibliothouris.Source.Books
 
     }
 }
-/*var qry = list
-    .Where<string>(item => regEx.IsMatch(item))
-    .ToList<string>();
 
- */
