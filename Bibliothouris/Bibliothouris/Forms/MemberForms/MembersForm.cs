@@ -43,6 +43,7 @@ namespace Bibliothouris.Forms.Members {
         }
 
 
+
         private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
