@@ -15,22 +15,22 @@ namespace Bibliothouris.Source.Books
         {
             
 
-            number =  number.Replace("*", ".*");
+            /*number =  number.Replace("*", ".*");
             title = title.Replace("*", ".*");
             firstName =  firstName.Replace("*", ".*");
-            lastName = lastName.Replace("*", ".*");
-            return books.Where<Book>(item => Regex.Matches(item.getISBN(),number).Count > 0)
-                .Where<Book>(item => Regex.Matches(item.getTitle(), title).Count > 0)
-                .Where<Book>(item => Regex.Matches(item.getAuthorFirstName(), firstName).Count > 0)
-                .Where<Book>(item => Regex.Matches(item.getAuthorLastName(), lastName).Count > 0).ToList<Book>();
+            lastName = lastName.Replace("*", ".*");*/
+            return books.Where<Book>(item =>RegexWithWildcard(number).Matches(item.getISBN()).Count > 0)
+                .Where<Book>(item => RegexWithWildcard(title).Matches(item.getTitle()).Count > 0)
+                .Where<Book>(item => RegexWithWildcard(firstName).Matches(item.getAuthorFirstName()).Count > 0)
+                .Where<Book>(item => RegexWithWildcard(lastName).Matches(item.getAuthorLastName()).Count > 0).ToList<Book>();
         }
 
-      /*  public Regex RegexWithWildcard(string input)
+        public Regex RegexWithWildcard(string input)
         {
             string pattern = input.Replace("*", ".*");
             return new Regex(pattern);
 
-        }*/
+        }
 
         public List <Book> getAllBooks()
         {

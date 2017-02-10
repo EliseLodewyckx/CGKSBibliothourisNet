@@ -64,7 +64,7 @@
             // 
             // Author
             // 
-            this.Author.Text = "Author";
+            this.Author.Text = "Author (firstname, lastname)";
             this.Author.Width = 356;
             // 
             // btAddBook
