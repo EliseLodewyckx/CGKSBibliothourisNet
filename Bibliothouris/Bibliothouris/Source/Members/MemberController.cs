@@ -22,9 +22,9 @@ namespace Bibliothouris.Forms.Members {
             }
         }
 
-        public void AddMember(string INSZ, string FirstName, string LastName, string City)
+        public void AddMember(string INSZ, string FirstName, string LastName, string street, string number, string postalCode, string City)
         {
-            service.AddMember(INSZ, FirstName, LastName, City);
+            service.AddMember(INSZ, FirstName, LastName, street, number,postalCode, City);
             addview.Close();
             LoadAllMembers();
         }

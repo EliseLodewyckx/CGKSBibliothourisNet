@@ -37,7 +37,7 @@ namespace Bibliothouris.Forms.Members {
             ListViewItem memberItem = new ListViewItem(member.INSZ);
             memberItem.SubItems.Add(member.FirstName);
             memberItem.SubItems.Add(member.LastName);
-            memberItem.SubItems.Add(member.City);
+            memberItem.SubItems.Add(member.Address.getCity());
             return memberItem;
            
         }

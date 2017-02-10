@@ -116,6 +116,7 @@
     <Compile Include="Source\Books\BookController.cs" />
     <Compile Include="Source\Books\BookRepository.cs" />
     <Compile Include="Source\Books\BookService.cs" />
+    <Compile Include="Source\Members\Address.cs" />
     <Compile Include="Source\Members\Member.cs" />
     <Compile Include="Source\Members\MemberController.cs" />
     <Compile Include="Source\Members\MemberRepository.cs" />
