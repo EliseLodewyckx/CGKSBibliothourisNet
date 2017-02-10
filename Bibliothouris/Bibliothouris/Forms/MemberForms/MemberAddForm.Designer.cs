@@ -76,35 +76,35 @@
             this.INSZMember.Location = new System.Drawing.Point(122, 17);
             this.INSZMember.Name = "INSZMember";
             this.INSZMember.Size = new System.Drawing.Size(181, 20);
-            this.INSZMember.TabIndex = 4;
+            this.INSZMember.TabIndex = 0;
             // 
             // FirstNameMember
             // 
             this.FirstNameMember.Location = new System.Drawing.Point(121, 54);
             this.FirstNameMember.Name = "FirstNameMember";
             this.FirstNameMember.Size = new System.Drawing.Size(182, 20);
-            this.FirstNameMember.TabIndex = 5;
+            this.FirstNameMember.TabIndex = 1;
             // 
             // LastNameMember
             // 
             this.LastNameMember.Location = new System.Drawing.Point(121, 91);
             this.LastNameMember.Name = "LastNameMember";
             this.LastNameMember.Size = new System.Drawing.Size(182, 20);
-            this.LastNameMember.TabIndex = 6;
+            this.LastNameMember.TabIndex = 2;
             // 
             // CityMember
             // 
             this.CityMember.Location = new System.Drawing.Point(121, 126);
             this.CityMember.Name = "CityMember";
             this.CityMember.Size = new System.Drawing.Size(183, 20);
-            this.CityMember.TabIndex = 7;
+            this.CityMember.TabIndex = 3;
             // 
             // add
             // 
             this.add.Location = new System.Drawing.Point(38, 180);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 8;
+            this.add.TabIndex = 4;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
