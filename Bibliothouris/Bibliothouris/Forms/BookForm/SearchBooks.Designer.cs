@@ -44,7 +44,7 @@
             this.txtSearchLastName.Location = new System.Drawing.Point(107, 88);
             this.txtSearchLastName.Name = "txtSearchLastName";
             this.txtSearchLastName.Size = new System.Drawing.Size(196, 20);
-            this.txtSearchLastName.TabIndex = 18;
+            this.txtSearchLastName.TabIndex = 3;
             // 
             // lblLastName
             // 
@@ -60,7 +60,7 @@
             this.txtSearchTitle.Location = new System.Drawing.Point(107, 36);
             this.txtSearchTitle.Name = "txtSearchTitle";
             this.txtSearchTitle.Size = new System.Drawing.Size(196, 20);
-            this.txtSearchTitle.TabIndex = 16;
+            this.txtSearchTitle.TabIndex = 1;
             // 
             // lblTitle
             // 
@@ -76,7 +76,7 @@
             this.txtSearchFirstName.Location = new System.Drawing.Point(107, 62);
             this.txtSearchFirstName.Name = "txtSearchFirstName";
             this.txtSearchFirstName.Size = new System.Drawing.Size(196, 20);
-            this.txtSearchFirstName.TabIndex = 14;
+            this.txtSearchFirstName.TabIndex = 2;
             // 
             // lblAuthorFirstName
             // 
@@ -92,7 +92,7 @@
             this.btSearch.Location = new System.Drawing.Point(13, 119);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(75, 23);
-            this.btSearch.TabIndex = 12;
+            this.btSearch.TabIndex = 4;
             this.btSearch.Text = "Search";
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
@@ -102,7 +102,7 @@
             this.txtSearchISBN.Location = new System.Drawing.Point(107, 10);
             this.txtSearchISBN.Name = "txtSearchISBN";
             this.txtSearchISBN.Size = new System.Drawing.Size(196, 20);
-            this.txtSearchISBN.TabIndex = 11;
+            this.txtSearchISBN.TabIndex = 0;
             // 
             // lblISBN
             // 
