@@ -44,6 +44,7 @@
             this.Title,
             this.Author});
             this.bookListView.Location = new System.Drawing.Point(12, 12);
+            this.bookListView.MultiSelect = false;
             this.bookListView.Name = "bookListView";
             this.bookListView.Size = new System.Drawing.Size(1260, 455);
             this.bookListView.TabIndex = 0;

@@ -81,7 +81,10 @@ namespace Bibliothouris.Forms.BookForm
 
         private void bookListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var book = bookcontroller.GetBookByISBN(bookListView.GetItemAt(e.X, e.Y).Name);
+            var book = bookcontroller.GetBookByISBN(bookListView.SelectedItems[0].Name);
+            MessageBox.Show(String.Format("book:ISBN: {0} \r\n Title: {1} \r\n Author: {2}", book.getTitle(), book.getISBN(), book.getAuthorFullName()));
         }
+
+  
     }
 }
