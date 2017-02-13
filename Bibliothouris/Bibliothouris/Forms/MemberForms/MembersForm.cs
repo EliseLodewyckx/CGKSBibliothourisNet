@@ -49,7 +49,11 @@ namespace Bibliothouris.Forms.Members {
         }
 
 
+<<<<<<< HEAD
      /*  private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
+=======
+        private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
+>>>>>>> 4d215e12dbfa412b471800bab3840d5fa5e8b6b1
 
         }
 
