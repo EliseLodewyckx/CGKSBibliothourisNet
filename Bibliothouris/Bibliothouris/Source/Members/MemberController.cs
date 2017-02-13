@@ -1,4 +1,5 @@
-﻿using Bibliothouris.Forms.MemberForms;
+﻿using System.Windows.Forms;
+using Bibliothouris.Forms.MemberForms;
 
 namespace Bibliothouris.Forms.Members {
 
@@ -23,9 +24,10 @@ namespace Bibliothouris.Forms.Members {
         }
 
         public void AddMember(string INSZ, string FirstName, string LastName, string street, string number, string postalCode, string City)
-        {
+        {  
             service.AddMember(INSZ, FirstName, LastName, street, number,postalCode, City);
             addview.Close();
+               ClearAllMembers();
             LoadAllMembers();
         }
 
@@ -34,5 +36,12 @@ namespace Bibliothouris.Forms.Members {
             addview.Clear();
             addview.ShowDialog();
         }
+
+        public void ClearAllMembers()
+        {
+            view.ClearAllMembers();
+        }
+
+    
     }
 }

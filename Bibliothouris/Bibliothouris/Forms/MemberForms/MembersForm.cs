@@ -13,6 +13,7 @@ namespace Bibliothouris.Forms.Members {
     public interface IMemberView {
         void SetController(MemberController memberController);
         void AddMember(Member member);
+        void ClearAllMembers();
         DialogResult ShowDialog();
     }
 
@@ -42,14 +43,19 @@ namespace Bibliothouris.Forms.Members {
            
         }
 
+        public void ClearAllMembers()
+        {
+            memberListView.Items.Clear();
+        }
 
-        private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
+
+     /*  private void MemberListView_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
 
         private void MemberListView_SelectedIndexChanged_1(object sender, EventArgs e) {
 
-        }
+        }*/
 
         private void add_Click(object sender, EventArgs e)
         {
